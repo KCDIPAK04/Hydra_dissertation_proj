@@ -1,0 +1,360 @@
+/* Make navbar full flex */
+.custom-navbar {
+    display: flex;
+    width: 100%;
+}
+.navbar-brand{
+    font-weight: 500;
+    font-size:35px;
+    color: #2f3a36;
+    margin-left:
+}
+
+/* Center menu */
+.center-menu {
+    margin: 0 auto;
+    display: flex;
+    gap: 25px;
+}
+
+/* Container takes full screen height */
+.mainHomeContent {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Overlay */
+.mainHomeContent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     background: rgba(255, 255, 255, 0.35);
+    z-index: -1;
+}
+
+/* Background Image */
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Content Positioning */
+.home-content {
+    margin-left: 5%;
+    max-width: 700px;
+    z-index: 1;
+}
+
+/* Badge (100% Natural Remedies) */
+.badge-custom {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 15px;
+    border-radius: 50px;
+    color: white;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.leaf-icon {
+    height: 50px ;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+
+}
+
+/* Heading Styling */
+.content2 h2 {
+    color: #454B1B;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+
+.content2 h2 span {
+    color: #4F7942;
+    font-style: italic;
+    font-family: serif;
+}
+
+/* Paragraph styling */
+.content3paragraph p {
+    color: #454B1B;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Button styling to match Image 1 */
+.btn-find {
+    background-color: #4a8c5f;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-find:hover {
+    background-color: #3e734e;
+    transform: translateY(-2px);
+}
+
+
+/************
+About Section
+*************/
+.about-section {
+    height: 30rem;
+    padding: 60px 0;
+    background-color: #F8FAFC; /* Light background - looks premium */
+}
+
+.about-title {
+    text-align: center;
+    font-family: 'Arvo', serif;
+    padding-top: 30px;
+    margin-bottom: 50px;
+}
+
+.about-title h4 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1f2937;
+    letter-spacing: -0.5px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Animation Styles */
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Hidden state before scroll */
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keep your hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: #f1f5f9;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+.card p {
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/*****
+Philosophy div
+*****/
+
+.philosophy-div {
+    background-color: #F1F5F5;
+    padding: 80px 0;
+    min-height: 40rem;
+}
+
+.philosophy-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Initial hidden state */
+.image-content,
+.text-content {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.image-content {
+    transform: translateX(-80px);
+}
+
+.text-content {
+    transform: translateX(80px);
+}
+
+/* Visible state */
+.image-content.visible,
+.text-content.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* List items staggered animation */
+.check-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.check-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image styling */
+.image-content img {
+    border-radius: 12px;
+    height: 480px;
+    width: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+/****************
+Natural Advantage
+****************/
+
+.natural-container{
+    background:#F2F2F2;
+    height:40rem;
+
+}
+.natural-content{
+    text-align:center;
+    padding-top:50px;
+}
+.natural-content p{
+    font-family: serif;
+}
+.natural-content h3{
+    font-family: 'Arvo', serif;
+    font-weight:60px;
+    margin-top:-6px;
+}
+.testiominal-container{
+    background:#FAF9F6;
+    height:20rem;
+}
+
+/****************
+Join Container
+****************/
+.join-container{
+    background:#5D7C6B;
+    height:20rem;
+}
+.join-title{
+    text-align:center;
+    padding-top:90px;
+    color:#ffff;
+    font-family: 'Arvo', serif;
+
+}
+.joint-title h2{
+    font-weight:200;
+    font-size: 40px;
+}
+
+.joint-title p{
+    font-family: serif;
+}
+.subscribe-container {
+  display: flex;
+  background-color: white;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  height: 55px;
+  margin: 0 auto;
+}
+
+/* Input Area */
+.subscribe-input {
+  flex-grow: 1;
+  border: none;
+  padding: 0 25px;
+  font-size: 16px;
+  color: #666;
+  outline: none;
+}
+
+/*  Black Button Area */
+.subscribe-button {
+  background-color: #262B26;
+  color: #ffffff;
+  border: none;
+  padding: 0 40px;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #333;
+}
+
+
+/*************
+Footer section
+**************/
+
+.footer-container{
+    height:15rem;
+    display:flex;
+}
+.footer-content{
+    padding-top:25px;
+}
+.company-footer-info{
+    padding-left:70px;
+    font-family: serif;
+}

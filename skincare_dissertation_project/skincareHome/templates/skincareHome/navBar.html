@@ -1,0 +1,31 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg" style="background-color: #fffbf7; font-family: 'Playfair Display', serif;
+    letter-spacing: 4px; ">
+  <div class="container-fluid"  >
+    <a class="navbar-brand" href="{% url 'home' %}" style="margin-top : 20px;" ><img src="{% static 'skincareHome/images/Leaf.png' %}" style="height:60px;">HYDRA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse custom-navbar" id="navbarNav" style="margin-top : 20px;">
+
+      <!-- CENTER MENU -->
+      <ul class="navbar-nav center-menu" >
+        <li class="nav-item"><a class="nav-link active" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Remedies</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Ingredients</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Our Story</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Journal</a></li>
+      </ul>
+
+      <!-- RIGHT MENU -->
+      <ul class="navbar-nav right-menu">
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fa-regular fa-user"></i></a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-basket-shopping"></i></a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

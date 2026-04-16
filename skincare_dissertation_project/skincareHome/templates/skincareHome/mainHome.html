@@ -1,0 +1,153 @@
+{% extends 'skincareHome/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Main Home Contents-->
+<div class="mainHomeContent">
+<!--    Home background Image -->
+    <img src="{% static 'skincareHome/images/backgroundimg.jpg' %}" class="bg-image">
+<!--    Contents overlay on background Image-->
+    <div class="home-content">
+        <div class="content1">
+            <span class="badge-custom">
+                <img src="{% static 'skincareHome/images/Leaf.png' %}" class="leaf-icon">
+                100% Natural Remedies
+            </span>
+        </div>
+        <div class="content2">
+            <h2>Your Skin Deserves <br><span>Nature's</span> Best</h2>
+        </div>
+        <div class="content3paragraph">
+            <p>Discover personalized home remedies crafted from natural ingredients. <br>
+               Tell us about your skin, and we'll recommend the perfect DIY treatments.</p>
+        </div>
+        <button type="button" class="btn-find"> <a href="{% url 'login' %}" style="color: #ffff; text-decoration:none; ">Find Your Remedy →</a></button>
+    </div>
+</div>
+
+<!--About Sections-->
+<div class="about-section">
+        <div class="about-title">
+            <h4>Everything You Need For Your Skin</h4>
+        </div>
+
+        <div class="cards-container">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="icon-circle">🌿</div>
+                <h3>Skin Remedies</h3>
+                <p>Natural home remedies personalized for your skin type</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="icon-circle">💧</div>
+                <h3>Water Tracker</h3>
+                <p>Daily water intake goals calculated from your weight</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="icon-circle">🔥</div>
+                <h3>Habit Streaks</h3>
+                <p>Track your skincare routine and build healthy habits</p>
+            </div>
+        </div>
+    </div>
+
+
+
+<!--Our Philosophy-->
+<!-- Our Philosophy Section -->
+<div class="philosophy-div">
+    <div class="philosophy-content">
+
+        <!-- Image First (Left Side) -->
+        <div class="image-content">
+            <img src="{% static 'skincareHome/images/herbal.jpg' %}" alt="Herbal Skincare">
+        </div>
+
+        <!-- Text Content (Right Side) -->
+        <div class="text-content">
+            <p>Our Philosophy</p>
+            <h3>Harmonizing Science <br> with Nature</h3>
+            <p>We believe that the most effective skincare doesn't need to be complicated. Our formulas are rooted in traditional herbalism, enhanced by modern understanding of skin biology. We source only the finest botanicals, ensuring every drop is potent and pure.</p>
+
+            <p class="check-item"><i class="fa-solid fa-check"></i> 100% Organic Ingredients</p>
+            <p class="check-item"><i class="fa-solid fa-check"></i> Cruelty-Free & Vegan</p>
+            <p class="check-item"><i class="fa-solid fa-check"></i> Cruelty-Free & Vegan</p>
+
+            <div class="content1">
+                <span class="badge-custom" style="color:#000000;">
+                    <img src="{% static 'skincareHome/images/Leaf.png' %}" class="leaf-icon">
+                    Learn More
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Natural Advantage-->
+<div class="natural-container">
+    <div class="natural-content">
+         <p>Why Chose Hydra</p>
+        <h3>The Natural Advantage</h3>
+    </div>
+</div>
+
+<!--Join Us Section-->
+<div class="testiominal-container">
+
+</div>
+
+<!--Join Us Section-->
+<div class="join-container">
+    <div class="join-title">
+        <h2>Join the Botanical Circle</h2>
+        <p>Subscribe for exclusive home remedy recipes, wellness tips, and early access to new collections.</p>
+        <div class="subscribe-container">
+            <input type="email" placeholder="Your email address" class="subscribe-input">
+            <button type="submit" class="subscribe-button"><a href="{% url 'login' %}" style="color:white; text-decoration:none;">Subscribe</a></button>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="footer-container">
+
+    <div class="footer-content">
+<!--  1ST info of footer    -->
+        <div class="conpany-info">
+            <div class="container-fluid"  >
+            <a class="navbar-brand" href="#" style="margin-top : 20px;" ><img src="{% static 'images/Leaf.png' %}" style="height:60px;">HYDRA</a>
+            </div>
+            <div class="company-footer-info">
+                <p>Crafting natural beauty solutions that <br>
+                    honor your skin and the environment.<br>
+                    Experience the purity of nature.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="shops-info">
+            s
+        </div>
+        <div class="detail-info">
+            d
+        </div>
+        <div class="support-info">
+            support
+        </div>
+    </div>
+</div>
+
+{% endblock %}

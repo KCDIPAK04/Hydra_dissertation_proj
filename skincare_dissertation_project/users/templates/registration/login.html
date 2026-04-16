@@ -1,0 +1,82 @@
+{% load static %}
+
+{% block content %}
+{% include 'registration/registerNavbar.html' %}
+<div class = "container">
+    <div class="hero-section">
+        <!-- LEFT SIDE -->
+    <div class="left-section">
+        <div class="img-section">
+            <img src="{% static 'users/images/registerImg.jpg' %}" alt="Register Image">
+
+            <div class="overlay"></div>
+            <div class="content-section">
+                <h2>Your Natural Skincare <br>Journey Starts Here</h2>
+                <p>
+                    Discover home remedies tailored to your skin type.<br>
+                    Track your habits. Glow naturally.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-section">
+        <form method="post" class="form" action="{% url 'login' %}">
+            {% csrf_token %}
+
+              <!-- Display Django messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Display form errors -->
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+                <!-- Heading section   -->
+                <div class="table-heading">
+                    <img src="{% static 'users/images/Leaf.png' %}" style="height:50px;">
+                    <h2><b>Glow Naturally</b> </h2>
+                </div>
+
+            <h2 class="title">Welcome Back</h2>
+            <p class="message">Sign in to continue your skincare journey</p>
+
+            <input type="email" name="email" placeholder="hello@example.com" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button type="submit">Sign In</button>
+
+            <p class="signup">
+                Don’t have an account? <a href="{% url 'signup' %}">Sign Up</a>
+            </p>
+            <a href="#" class="btn-google">
+                <button><img src="{% static 'users/images/google-icon.png' %}" alt="Google"> Sign in with Google</button>
+            </a>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
