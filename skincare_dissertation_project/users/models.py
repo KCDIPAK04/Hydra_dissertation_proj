@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -42,3 +43,21 @@ class CustomUser(AbstractUser):
         if not self.name and self.first_name and self.last_name:
             self.name = f"{self.first_name} {self.last_name}"
         super().save(*args, **kwargs)
+
+
+
+class UserProfile(models.Model):
+    SKIN_CHOICES = [
+        ('oily', 'Oily'),
+        ('dry', 'Dry'),
+        ('combination', 'Combination'),
+        ('normal', 'Normal'),
+    ]
+
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    age = models.IntegerField(null=True, blank=True)
+    weight = models.FloatField(null=True, blank=True)
+    skin_type = models.CharField(max_length=20, choices=SKIN_CHOICES, null=True, blank=True)
+
+    def __str__(self):
+        return self.user.email

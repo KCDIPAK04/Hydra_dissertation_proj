@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import CustomUser
+from .models import CustomUser, UserProfile
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -50,3 +50,10 @@ class ContactForm(forms.Form):
     email = forms.EmailField()
     subject = forms.CharField(max_length=200)
     message = forms.CharField(widget=forms.Textarea)
+
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['age', 'weight', 'skin_type']

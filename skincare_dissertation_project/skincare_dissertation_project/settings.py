@@ -32,7 +32,8 @@ INSTALLED_APPS = [
 
 #     additional installed apps
     'skincareHome',
-    'users',
+    'users.apps.UsersConfig',
+    'dashboard',
 ]
 
 SITE_ID = 1
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'allauth.account.middleware.AccountMiddleware',
+    'users.middleware.ProfileCompletionMiddleware',
 ]
 
 ROOT_URLCONF = 'skincare_dissertation_project.urls'

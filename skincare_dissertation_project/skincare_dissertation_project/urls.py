@@ -28,6 +28,9 @@ urlpatterns = [
     # Users Login views
     path('accounts/', include('users.urls')),
 
+    # main dashboard URLs
+    path('dashboard/', include('dashboard.urls')),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
