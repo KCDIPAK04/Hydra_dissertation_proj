@@ -100,6 +100,94 @@
   margin-left: auto;
 }
 
+.icon-group {
+    display: flex;
+    gap: 30px;
+    margin-left:50vh;
+}
+
+/* Individual icon box */
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Icon style */
+.icon-box i {
+    font-size: 16px;
+    color: #2e7d5b;
+}
+
+/* Hover effect */
+.icon-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+
+/* main Dashboard Content */
+.dashboard-content {
+    display: flex;
+    align-items: center;
+}
+
+.download-section {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    margin-right:10px;
+
+}
+.download-section button{
+    background: linear-gradient(to right, #0f5132, #198754);
+    color:white;
+    border-radius:50px;
+    border: none;
+    height:50px;
+    width:125px;
+}
+
+.dashboard-title{
+    margin:20px;
+}
+.project-details{
+    display:flex;
+    margin-left:20px;
+    gap:20px;
+}
+.card1 {
+    width: 15rem;
+    height:10rem;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    background: white;
+}
+
+.card1:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+}
+.card1 {
+    background: linear-gradient(135deg, #166534 0%, #14532d 100%);
+    color: white;
+}
+.card1:hover {
+    background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+}
+
+
 
 
 /* Responsive */
