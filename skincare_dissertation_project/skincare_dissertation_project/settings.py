@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     'skincareHome',
     'users.apps.UsersConfig',
     'dashboard',
+
+#     push notification feature
+    'django_crontab',
+    'rest_framework',
 ]
 
 SITE_ID = 1
@@ -140,7 +144,9 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-
+CRONJOBS = [
+    ('0 18 * * *', 'dashboard.tasks.send_daily_reminders'),
+]
 
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_LOGIN_ON_GET = True
@@ -156,3 +162,10 @@ EMAIL_HOST_USER = 'sanbi12subedi@gmail.com'
 EMAIL_HOST_PASSWORD = '@sanbi98400'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+ALLOWED_HOSTS = [
+    '192.168.1.71',
+    'localhost',
+    '127.0.0.1'
+]

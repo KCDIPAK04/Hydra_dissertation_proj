@@ -188,6 +188,82 @@
 }
 
 
+.tracker{
+    display:flex;
+
+}
+
+.weekly-tracker {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.day {
+    width: 40px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-size: 12px;
+    color: #666;
+}
+
+
+.day.active {
+    background: linear-gradient(180deg, #0f5132, #198754);
+    color: white;
+}
+
+.day.inactive {
+    background: repeating-linear-gradient(
+        45deg,
+        #e0e0e0,
+        #e0e0e0 5px,
+        #ffffff 5px,
+        #ffffff 10px
+    );
+}
+
+
+.calendar-header,
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.calendar-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.calendar-day {
+    height: 33px;
+    width: 40px;
+    border-radius: 8px;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.active-day {
+    background: linear-gradient(135deg, #0f5132, #198754);
+    color: white;
+    font-weight: bold;
+}
+
+.other-month {
+    opacity: 0.3;
+}
+
+
+
+
 
 
 /* Responsive */

@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import CustomUserCreationForm, UserProfileForm
 from .models import UserProfile
-
+from datetime import date
+from dashboard.models import DailyLogin
 
 def login_view(request):
     if request.method == 'POST':
@@ -13,9 +14,11 @@ def login_view(request):
         user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
+            DailyLogin.objects.get_or_create(
+                user=user,
+                date=date.today()
+            )
             return redirect('dashboard:home')
-        else:
-            messages.error(request, 'Invalid credentials')
     return render(request, 'registration/login.html')
 
 

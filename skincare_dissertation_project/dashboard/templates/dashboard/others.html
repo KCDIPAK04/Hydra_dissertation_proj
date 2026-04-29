@@ -16,7 +16,10 @@
           <i class="fa-regular fa-envelope"></i>
         </div>
         <div class="icon-box">
-          <i class="fa-regular fa-bell"></i>
+
+      <button type="button" onclick="enableNotifications()">
+    <i class="fa-regular fa-bell"></i>
+</button>
         </div>
       </div>
 
@@ -102,13 +105,48 @@
 </div>
 
 
-    <!-- Skin Analysis   -->
-    <div class="card" style="height:250px; width:450px; margin:20px;">
+
+    <div class="tracker">
+
+          <!-- Weekly tracking   -->
+         <div class="card" style="height:180px; width:350px; margin:20px;">
         <div class="card-body">
             <h5 class="card-title">Skin Analysis</h5>
+                <div class="weekly-tracker">
+                    {% for day in week_days %}
+                        <div class="day {% if day.logged_in %}active{% else %}inactive{% endif %}">
+                            {{ day.label }}
+                        </div>
+                    {% endfor %}
+                </div>
         </div>
     </div>
 
+     <!-- Monthly tracking   -->
+       <div class="card" style="height:290px; width:450px; margin:20px;">
+            <div class="card-body">
+                <h5 class="card-title">Monthly Login Tracker</h5>
+                    <div class="calendar-header">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                <div class="calendar-grid">
+                    {% for day in month_days %}
+                        <div class="calendar-day
+                            {% if not day.current_month %}other-month{% endif %}
+                            {% if day.logged_in %}active-day{% endif %}">
+                            {{ day.day_number }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
