@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import CustomUserCreationForm, UserProfileForm
-from .models import UserProfile
+from .forms import CustomUserCreationForm
 from datetime import date
 from dashboard.models import DailyLogin
 
@@ -36,20 +35,5 @@ def signup_view(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
-@login_required
-def complete_profile(request):
-    profile, _ = UserProfile.objects.get_or_create(user=request.user)
-
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            return redirect('dashboard:home')
-
-    else:
-        form = UserProfileForm(instance=profile)
-
-    return render(request, 'users/complete_profile.html', {
-        'form': form,
-        'profile': profile
-    })
+def user_profile(request):
+    return render(request, 'userProfile/user_profile.html')

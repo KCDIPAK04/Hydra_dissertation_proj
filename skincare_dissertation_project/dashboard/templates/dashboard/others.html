@@ -16,23 +16,11 @@
           <i class="fa-regular fa-envelope"></i>
         </div>
         <div class="icon-box">
-
-      <button type="button" onclick="enableNotifications()">
-    <i class="fa-regular fa-bell"></i>
-</button>
+            <i class="fa-regular fa-bell"></i>
         </div>
       </div>
 
-      <!-- User Profile Section     -->
-       <div class="user-profile" style="margin-left:40px;">
-          <img src="#">
-        </div>
-      <div class="container" >
-        <div class="user-info">
-          <h5>User Name</h5>
-          <p>User Email</p>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>
@@ -43,7 +31,7 @@
     <div class="dashboard-content" style="display:flex">
       <div class="dashboard-title">
         <h3>Dashboard</h3>
-        <p>Welcome, user to Hydra Skincare </p>
+        <p>Welcome, {{ user.name }} to Hydra Skincare </p>
       </div>
      <div class="download-section" >
       <button class="import-btn">

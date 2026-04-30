@@ -11,13 +11,6 @@ class DailyLogin(models.Model):
         unique_together = ('user', 'date')
 
 
-# Model to make phone alert system
-User = get_user_model()
-
-class DeviceToken(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    token = models.TextField()
-
 
 
 

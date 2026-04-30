@@ -1,14 +1,11 @@
-from rest_framework.decorators import api_view
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from .models import *
 import calendar
 from datetime import date, timedelta
-import json
-from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-from .models import DeviceToken
-from firebase_admin import messaging
-
+from users.models import CustomUser
+from django.shortcuts import render, get_object_or_404
 
 @login_required
 def main_dashboard(request):
@@ -60,27 +57,9 @@ def main_dashboard(request):
     })
 
 
+def user_info(request, username):
+    user = get_object_or_404(CustomUser, username=username)
 
-# Mobile alert system
-
-@login_required
-def save_token(request):
-    if request.method != "POST":
-        return JsonResponse({"error": "POST required"}, status=400)
-
-    try:
-        data = json.loads(request.body)
-        token = data.get("token")
-
-        print("TOKEN RECEIVED:", token)
-        print("USER:", request.user)
-
-        DeviceToken.objects.update_or_create(
-            user=request.user,
-            defaults={"token": token}
-        )
-
-        return JsonResponse({"message": "saved"})
-
-    except Exception as e:
-        return JsonResponse({"error": str(e)}, status=500)
+    return render(request, 'user_info.html', {
+        'user': user
+    })

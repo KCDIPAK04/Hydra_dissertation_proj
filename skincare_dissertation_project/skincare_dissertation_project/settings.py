@@ -35,9 +35,6 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'dashboard',
 
-#     push notification feature
-    'django_crontab',
-    'rest_framework',
 ]
 
 SITE_ID = 1
@@ -52,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'allauth.account.middleware.AccountMiddleware',
-    'users.middleware.ProfileCompletionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'skincare_dissertation_project.urls'
@@ -164,8 +161,3 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-ALLOWED_HOSTS = [
-    '192.168.1.71',
-    'localhost',
-    '127.0.0.1'
-]

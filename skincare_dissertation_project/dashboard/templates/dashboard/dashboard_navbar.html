@@ -1,10 +1,18 @@
 <div class="card" style="width: 16rem; background-color:#F2F2F2;">
     <div class="sidebar">
-  <!-- Logo -->
-  <div class="logo">
-    <div class="logo-icon">🌱</div>
-    <span class="logo-text">HYDRA</span>
-  </div>
+    <!-- User Profile Section     -->
+      <div class="profile-section" style="display:flex; margin-right:50px;">
+        <div class="user-profile">
+          <img src="#">
+        </div>
+        <div class="container">
+          <div class="user-info">
+            <h5><a href="{% url 'user_profile' %}" style="color:black; text-decoration: none;">{{ user.name }}</a></h5>
+            <p>{{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+
   <!-- MENU Section -->
   <div class="menu-section">
     <div class="section-title">MENU</div>

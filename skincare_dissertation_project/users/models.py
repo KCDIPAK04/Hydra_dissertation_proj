@@ -30,6 +30,7 @@ class CustomUser(AbstractUser):
     name = models.CharField(max_length=255)
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
+    profile_photo = models.ImageField(upload_to='profile_photos/', null=True, blank=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
@@ -46,18 +47,3 @@ class CustomUser(AbstractUser):
 
 
 
-class UserProfile(models.Model):
-    SKIN_CHOICES = [
-        ('oily', 'Oily'),
-        ('dry', 'Dry'),
-        ('combination', 'Combination'),
-        ('normal', 'Normal'),
-    ]
-
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    age = models.IntegerField(null=True, blank=True)
-    weight = models.FloatField(null=True, blank=True)
-    skin_type = models.CharField(max_length=20, choices=SKIN_CHOICES, null=True, blank=True)
-
-    def __str__(self):
-        return self.user.email

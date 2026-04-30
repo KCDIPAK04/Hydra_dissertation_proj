@@ -1,7 +1,7 @@
 # users/admin.py
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser, UserProfile
+from .models import CustomUser
 from django.utils.translation import gettext_lazy as _
 from django.utils.html import format_html
 from .forms import CustomUserCreationForm
@@ -50,4 +50,3 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(UserProfile)

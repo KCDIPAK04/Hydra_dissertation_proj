@@ -31,13 +31,6 @@ urlpatterns = [
     # main dashboard URLs
     path('dashboard/', include('dashboard.urls')),
 
-path(
-        "firebase-messaging-sw.js",
-        TemplateView.as_view(
-            template_name="dashboard/firebase-messaging-sw.js",
-            content_type="application/javascript"
-        )
-    ),
 
 ]
 if settings.DEBUG:
